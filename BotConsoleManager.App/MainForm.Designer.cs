@@ -597,7 +597,7 @@
             // comboBox_Difficulty
             // 
             comboBox_Difficulty.FormattingEnabled = true;
-            comboBox_Difficulty.Items.AddRange(new object[] { "0: Passive", "1: Easy", "2: Normal", "3: Hard/Expert" });
+            comboBox_Difficulty.Items.AddRange(new object[] { "0: Easy", "1: Normal", "2: Hard", "3: Expert" });
             comboBox_Difficulty.Location = new Point(266, 22);
             comboBox_Difficulty.Name = "comboBox_Difficulty";
             comboBox_Difficulty.Size = new Size(99, 23);
