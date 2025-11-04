@@ -5,4 +5,4 @@ It allows users to easily generate, build, and export complex console commands a
 
 Environment: Tested on Windows 10.
 
-![BotConsoleManager Screenshot](images/screenshot.png)
+![BotConsoleManager Screenshot](BotConsoleManager.App/images/screenshot.png)
