@@ -16,18 +16,18 @@ namespace BotConsoleManager.App
             settingsFilePath = Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
                 "CS2ConfigGenerator",
-                "lastpath.txt");
+                "settings.txt");
 
             // Load persisted path (if any)
             textBox_Path.Text = LoadPreferredPath();
 
-            // 쉬움
+            // Init Difficulty - Easy
             comboBox_Difficulty.SelectedIndex = 2;
             comboBox_Difficulty.Text = comboBox_Difficulty.Items[2]?.ToString()
                     ?? comboBox_Difficulty.SelectedItem?.ToString()
                     ?? string.Empty;
 
-            // 일반 모드
+            // Init Gamemode - Balanced
             comboBox_GameMode.SelectedIndex = 0;
             comboBox_GameMode.Text = comboBox_GameMode.Items[0]?.ToString()
                     ?? comboBox_GameMode.SelectedItem?.ToString()
@@ -72,7 +72,7 @@ namespace BotConsoleManager.App
         {
             try
             {
-                // 각 텍스트박스의 값 읽기
+                // Read the value of each text box
                 string casualConfig =
                     $"sv_cheats 1\n" +
                     $"mp_respawn_on_death_ct 0\n" +
@@ -155,7 +155,7 @@ namespace BotConsoleManager.App
                 // clamp game mode index to a safe range
                 int gameModeIndex = Math.Clamp(comboBox_GameMode.SelectedIndex, 0, 2);
 
-                // bot_quota 배열
+                // bot_quota inputs
                 int[] quotas = { 6, 10, 12, 16, 20 };
 
                 // single Random instance to avoid reseeding each iteration
@@ -174,7 +174,7 @@ namespace BotConsoleManager.App
                         botsPerTeam = quota;
                     }
 
-                    // 봇 추가 명령어 문자열 빌드
+                    // Construct the bot add command string
                     StringBuilder botLines = new StringBuilder();
 
                     for (int i = 0; i < botsPerTeam; i++)
@@ -205,17 +205,16 @@ namespace BotConsoleManager.App
                         }
                     }
 
-                    // 기본 설정
                     string cfgText =
                         casualConfig +
-                        $"bot_kick\n" +                       // 기존 봇 초기화
-                        botLines.ToString() +              // 위에서 만든 봇 추가문
+                        $"bot_kick\n" +                       // Initialize bots currently in the room
+                        botLines.ToString() +
                         $"bot_quota {quota}\n" +
                         $"\nmp_restartgame 1\n";
 
                     File.WriteAllText(filePath, cfgText);
 
-                    // 팀 데스매치용 cfg도 생성
+                    // Generate Team Deathmatch cfg as well
                     if (checkBox_IsTeamDeathmatch.Checked)
                     {
                         string tdmFileName = $"{quota}dm.cfg";
@@ -231,9 +230,6 @@ namespace BotConsoleManager.App
                         File.WriteAllText(tdmFilePath, tdmCfgText);
                     }
                 }
-
-                // Explorer에서 폴더 자동 열기
-                // System.Diagnostics.Process.Start("explorer.exe", outputFolder);
 
                 MessageBox.Show("Successfully generated!", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
