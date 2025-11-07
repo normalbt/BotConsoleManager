@@ -540,7 +540,7 @@
             label_Difficulty.Size = new Size(55, 15);
             label_Difficulty.TabIndex = 10;
             label_Difficulty.Text = "Difficulty";
-            toolTip1.SetToolTip(label_Difficulty, "Sets the skill level for bots added to the server. (0: Passive, 1: Easy, 2: Normal, 3: Hard/Expert).");
+            toolTip1.SetToolTip(label_Difficulty, "Sets the skill level for bots added to the server. (0: Easy, 1: Normal, 2: Hard, 3: Expert).");
             // 
             // checkBox_IsTeamDeathmatch
             // 
