@@ -81,6 +81,7 @@
             label_C4Timer = new Label();
             label2 = new Label();
             label_GameMode = new Label();
+            label_Path = new Label();
             comboBox_Difficulty = new ComboBox();
             textBox_C4Timer = new TextBox();
             checkBox_AutoDiff = new CheckBox();
@@ -89,7 +90,6 @@
             comboBox_GameMode = new ComboBox();
             folderBrowserDialog1 = new FolderBrowserDialog();
             textBox_Path = new TextBox();
-            label_Path = new Label();
             button_FindPath = new Button();
             label5 = new Label();
             panel1.SuspendLayout();
@@ -347,9 +347,9 @@
             label_Title.AutoSize = true;
             label_Title.Location = new Point(652, 9);
             label_Title.Name = "label_Title";
-            label_Title.Size = new Size(165, 15);
+            label_Title.Size = new Size(166, 15);
             label_Title.TabIndex = 10;
-            label_Title.Text = "CS2 Bot Config File Generater ";
+            label_Title.Text = "CS2 Bot Config File Generator ";
             // 
             // panel1
             // 
@@ -594,6 +594,17 @@
             label_GameMode.Text = "Game Mode";
             toolTip1.SetToolTip(label_GameMode, "Balanced\tEqual players on both teams.\r\nSolo (T)\t\tT team is restricted to one player.\r\nSolo (CT)\tCT team is restricted to one player.");
             // 
+            // label_Path
+            // 
+            label_Path.AutoSize = true;
+            label_Path.Font = new Font("Segoe UI", 8F);
+            label_Path.Location = new Point(12, 468);
+            label_Path.Name = "label_Path";
+            label_Path.Size = new Size(30, 13);
+            label_Path.TabIndex = 10;
+            label_Path.Text = "Path";
+            toolTip1.SetToolTip(label_Path, "Select the CS2 folder to save CFG files.");
+            // 
             // comboBox_Difficulty
             // 
             comboBox_Difficulty.FormattingEnabled = true;
@@ -654,17 +665,6 @@
             textBox_Path.Name = "textBox_Path";
             textBox_Path.Size = new Size(483, 23);
             textBox_Path.TabIndex = 1;
-            // 
-            // label_Path
-            // 
-            label_Path.AutoSize = true;
-            label_Path.Font = new Font("Segoe UI", 8F);
-            label_Path.Location = new Point(12, 468);
-            label_Path.Name = "label_Path";
-            label_Path.Size = new Size(30, 13);
-            label_Path.TabIndex = 10;
-            label_Path.Text = "Path";
-            toolTip1.SetToolTip(label_Path, "Select the CS2 folder to save CFG files.");
             // 
             // button_FindPath
             // 
