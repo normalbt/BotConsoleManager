@@ -258,7 +258,7 @@
             textBox_BuyTime.Name = "textBox_BuyTime";
             textBox_BuyTime.Size = new Size(59, 23);
             textBox_BuyTime.TabIndex = 1;
-            textBox_BuyTime.Text = "45";
+            textBox_BuyTime.Text = "15";
             // 
             // textBox_BuyAnywhere
             // 
@@ -443,7 +443,7 @@
             textBox_Customs.Name = "textBox_Customs";
             textBox_Customs.Size = new Size(303, 251);
             textBox_Customs.TabIndex = 1;
-            textBox_Customs.Text = "//The team that first secures 13 rounds wins (Score 13:X).\r\n//mp_maxrounds 24";
+            textBox_Customs.Text = "//The team that first secures 16 rounds wins (Score 16:X).\r\n//mp_maxrounds 30";
             // 
             // label_ResqueTime
             // 
@@ -581,7 +581,7 @@
             label2.Size = new Size(117, 13);
             label2.TabIndex = 10;
             label2.Text = "Randomize Bot Levels";
-            toolTip1.SetToolTip(label2, "Applies the automatic difficulty threshold -2.\r\n(e.g., Levels 0 through 2 appear at Normal difficulty)");
+            toolTip1.SetToolTip(label2, "Applies an automatic difficulty range of –2 levels.\r\n(e.g., Levels 0–2 appear at Hard difficulty)");
             // 
             // label_GameMode
             // 
@@ -664,6 +664,7 @@
             label_Path.Size = new Size(30, 13);
             label_Path.TabIndex = 10;
             label_Path.Text = "Path";
+            toolTip1.SetToolTip(label_Path, "Select the CS2 folder to save CFG files.");
             // 
             // button_FindPath
             // 
