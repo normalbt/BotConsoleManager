@@ -235,11 +235,11 @@ namespace BotConsoleManager.App
                 // Explorer에서 폴더 자동 열기
                 // System.Diagnostics.Process.Start("explorer.exe", outputFolder);
 
-                MessageBox.Show("성공적으로 생성되었습니다!", "완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Successfully generated!", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"오류 발생: {ex.Message}", "에러", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
